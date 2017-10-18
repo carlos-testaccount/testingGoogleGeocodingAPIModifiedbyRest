@@ -1,0 +1,4 @@
+# tests and coverage output
+.xml
+Gemfile.lock
+.bundle
