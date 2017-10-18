@@ -1,4 +1,4 @@
-@carlos
+@valid
 Feature: Cover the happy path case
 
   Scenario Outline: valid Address
@@ -47,10 +47,3 @@ Feature: Cover the happy path case
       | key        | AIzaSyDLy4-E74lM7BHFgzC189ZhAuAGWl5jcl4       |
     Then I see response with status 'OK'
 
-  Scenario: valid Address and components
-    When I successfully browse to the url
-      | parameter  | value                                         |
-      | address    | 6 Mozarabes                                   |
-      | components | administrative_area:Huelva\|postal_code:94107 |
-      | key        | AIzaSyDLy4-E74lM7BHFgzC189ZhAuAGWl5jcl4       |
-    Then I see response with status 'ZERO_RESULTS'

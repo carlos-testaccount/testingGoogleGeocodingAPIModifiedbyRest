@@ -3,8 +3,9 @@
 require 'cucumber'
 require 'rspec'
 require 'rspec/core'
-require 'httparty'
+#require 'httparty'
 #require 'cukeforker'
+require 'faraday'
 
 #require_relative '../step-definitions/helpers/transformations'
 

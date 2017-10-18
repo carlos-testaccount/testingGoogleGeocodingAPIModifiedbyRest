@@ -1,4 +1,5 @@
 # tests and coverage output
-.xml
+*.xml
 Gemfile.lock
 .bundle
+.ruby-version
