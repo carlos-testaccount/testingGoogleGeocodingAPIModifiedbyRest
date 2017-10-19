@@ -3,4 +3,5 @@
 Gemfile.lock
 .bundle
 .ruby-version
-.vendor/*
+=.vendor/*
+.idea/
