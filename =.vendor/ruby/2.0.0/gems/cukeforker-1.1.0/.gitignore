@@ -1,0 +1,10 @@
+pkg/*
+*.gem
+.bundle
+Gemfile.lock
+\#*
+.\#*
+.idea
+.ruby-version
+/coverage
+.DS_STORE

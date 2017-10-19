@@ -39,6 +39,7 @@ Feature: Cover the happy path case
       | locality:La Palma \|administrative_area:Huelva                 |
       | locality:La Palma \|administrative_area:Huelva \|country:Spain |
 
+  @carlos
   Scenario: valid Address and components
     When I successfully browse to the url
       | parameter  | value                                         |
@@ -46,4 +47,8 @@ Feature: Cover the happy path case
       | components | administrative_area:Huelva\|postal_code:21002 |
       | key        | AIzaSyDLy4-E74lM7BHFgzC189ZhAuAGWl5jcl4       |
     Then I see response with status 'OK'
+    And I see response contains an address_component
+      | type                        | attribute  | value  |
+      | administrative_area_level_2 | short_name | Huelva |
+
 

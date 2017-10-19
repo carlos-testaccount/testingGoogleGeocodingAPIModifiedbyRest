@@ -1,0 +1,14 @@
+current directory: /Users/carlosalarcon/Documents/Projects/testingGoogleGeocodingAPI/=.vendor/ruby/2.0.0/gems/json-2.1.0/ext/json
+/Users/carlosalarcon/.rvm/rubies/ruby-2.0.0-p648/bin/ruby -r ./siteconf20171019-63803-1u5f55q.rb extconf.rb
+creating Makefile
+
+current directory: /Users/carlosalarcon/Documents/Projects/testingGoogleGeocodingAPI/=.vendor/ruby/2.0.0/gems/json-2.1.0/ext/json
+make "DESTDIR=" clean
+
+current directory: /Users/carlosalarcon/Documents/Projects/testingGoogleGeocodingAPI/=.vendor/ruby/2.0.0/gems/json-2.1.0/ext/json
+make "DESTDIR="
+make: Nothing to be done for `all'.
+
+current directory: /Users/carlosalarcon/Documents/Projects/testingGoogleGeocodingAPI/=.vendor/ruby/2.0.0/gems/json-2.1.0/ext/json
+make "DESTDIR=" install
+installing default libraries

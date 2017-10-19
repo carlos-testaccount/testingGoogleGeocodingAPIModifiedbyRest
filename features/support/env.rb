@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require 'cucumber'
-require 'rspec'
-require 'rspec/core'
+#require 'cucumber'
+#require 'rspec'
+#require 'rspec/core'
 #require 'httparty'
 #require 'cukeforker'
 require 'faraday'
