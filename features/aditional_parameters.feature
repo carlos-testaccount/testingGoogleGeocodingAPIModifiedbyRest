@@ -11,7 +11,8 @@ Feature: Cover the happy path case
       | address_value                         |
       | 88+Colin+P+Kelly+Jr+St,+San+Francisco |
 
-    #additional parameters
+
+  #additional parameters
   #bounds
   #language
   #region

@@ -8,8 +8,6 @@ require 'cukeforker'
 require 'cukeforker/rake_task'
 require 'jsonpath'
 
-#require 'cuke_sniffer'
-
 require 'report_builder'
 
 task "move_to_test_directory" do
@@ -17,8 +15,13 @@ task "move_to_test_directory" do
 end
 
 Cucumber::Rake::Task.new("running_geo_api_tests") do |t|
-  # t.cucumber_opts = ["--tags", "@carlos", "--tags", "~@pend", "--format", "html", "--out", "report.html", "--format", "junit", "--out", "testoutput", "--format", "pretty", "--format", "rerun", "--out", "rerun.txt"]
+   # t.cucumber_opts = ["--tags", "@carlos", "--tags", "~@pend", "--format", "html", "--out", "report.html", "--format", "junit", "--out", "testoutput", "--format", "pretty", "--format", "rerun", "--out", "rerun.txt"]
   t.cucumber_opts = ["--tags", "@carlos"]
+end
+
+Cucumber::Rake::Task.new("running_all_tests") do |t|
+  # t.cucumber_opts = ["--tags", "@carlos", "--tags", "~@pend", "--format", "html", "--out", "report.html", "--format", "junit", "--out", "testoutput", "--format", "pretty", "--format", "rerun", "--out", "rerun.txt"]
+  t.cucumber_opts = ["--tags", "~@pend"]
 end
 
 # Cucumber::Rake::Task.new("running_parallel_geo_api_tests") do
@@ -28,16 +31,18 @@ end
 
 task :cleanup_cuke_forker do
   puts " ========Deleting old reports and logs========="
-  #FileUtils.rm_rf('reports/test_report')
-  Dir.mkdir("features/reports/test_report")
+  FileUtils.rm_rf('features/tmp_reports')
+  Dir.mkdir('features/tmp_reports')
+
   ReportBuilder.configure do |config|
-    config.json_path = 'reports/test_report'
-    config.report_path = 'reports/test_report'
-    config.report_tabs = [:overview, :features, :scenarios, :errors]
+    config.json_path    = 'features/tmp_reports'
+    config.report_path  = 'reports'
+    config.report_tabs  = [:overview, :features, :scenarios, :errors]
     config.report_title = 'Test Results'
-    config.report
+    #config.report
   end
 end
+
 
 task :all do
   Rake::Task['cleanup_cuke_forker'].invoke
@@ -45,11 +50,11 @@ task :all do
 
   Dir.chdir('features/')
 
-  CukeForker::Runner.run CukeForker::Scenarios.tagged('@carlos'), {:max => 10,
-                                                     :log => true, :format => :json, :out => 'reports/test_report'}
+  CukeForker::Runner.run CukeForker::Scenarios.tagged('@carlos'), {:max => 20,
+                                                                   :log => true, :format => :json, :out => 'features/tmp_reports'}
   puts "===== End Executing Tests in parallel"
   puts "===== Executing report"
+  #Dir.chdir('/')
   ReportBuilder.build_report
   puts "===== End Executing report"
-
 end

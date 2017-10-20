@@ -7,17 +7,19 @@ def convertTableToHash(table, key, value)
     # skip if filter name is nil or empty
     next if filterName.to_s.strip.length == 0
 
-    unless filterValue == 'none'
-      if result.has_key?(filterName)
-        tmp = result[filterName];
-        if (tmp.kind_of?(Array))
-          tmp.push(filterValue);
+    unless filterName == 'none'
+      unless filterValue == 'none'
+        if result.has_key?(filterName)
+          tmp = result[filterName];
+          if (tmp.kind_of?(Array))
+            tmp.push(filterValue);
+          else
+            tmp = [tmp, filterValue];
+            result[filterName] = tmp;
+          end
         else
-          tmp = [tmp, filterValue];
-          result[filterName] = tmp;
+          result[filterName] = filterValue;
         end
-      else
-        result[filterName] = filterValue;
       end
     end
   end
