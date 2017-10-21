@@ -3,9 +3,8 @@ Feature: Cover the happy path case
 
   Scenario Outline: valid Address
     When I successfully browse to the url
-      | parameter | value                                   |
-      | address   | <address_value>                         |
-      | key       | AIzaSyDLy4-E74lM7BHFgzC189ZhAuAGWl5jcl4 |
+      | parameter | value           |
+      | address   | <address_value> |
     Then I see response with status 'OK'
     And I see first response formatted_address '<formatted_address>'
     And I see first response contains '<location_type>' geographic coordinates
@@ -25,9 +24,8 @@ Feature: Cover the happy path case
 
   Scenario Outline: valid components
     When I successfully browse to the url
-      | parameter  | value                                   |
-      | components | <components_value>                      |
-      | key        | AIzaSyDLy4-E74lM7BHFgzC189ZhAuAGWl5jcl4 |
+      | parameter  | value              |
+      | components | <components_value> |
     Then I see response with status 'OK'
     And I see first response formatted_address '<formatted_address>'
     And I see first response contains '<location_type>' geographic coordinates
@@ -48,7 +46,6 @@ Feature: Cover the happy path case
       | parameter  | value                                         |
       | address    | 6 Mozarabes                                   |
       | components | administrative_area:Huelva\|postal_code:21002 |
-      | key        | AIzaSyDLy4-E74lM7BHFgzC189ZhAuAGWl5jcl4       |
     Then I see response with status 'OK'
     And I see first response contains an address_component
       | type                        | attribute  | value  |
@@ -57,13 +54,11 @@ Feature: Cover the happy path case
 
   Scenario: several responses
     When I successfully browse to the url
-      | parameter  | value                                   |
-      | address    | Calle Real                              |
-      | components | country:Spain                           |
-      | key        | AIzaSyDLy4-E74lM7BHFgzC189ZhAuAGWl5jcl4 |
+      | parameter  | value         |
+      | address    | Calle Real    |
+      | components | country:Spain |
     And I see 'GEOMETRIC_CENTER' response contains a formatted_address 'Calle Real, San Sebastián de los Reyes, Madrid, Spain'
     And I see all results contains an address_component
       | type    | attribute  | value |
       | country | short_name | ES    |
-
 

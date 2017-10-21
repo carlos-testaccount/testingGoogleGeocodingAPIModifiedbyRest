@@ -1,13 +1,6 @@
-# frozen_string_literal: true
 
-#require 'cucumber'
-#require 'rspec'
-#require 'rspec/core'
-#require 'httparty'
-#require 'cukeforker'
-require 'faraday'
+# store key passed in parameter or use a default one
+KEY_PASSED = ENV['key'] || 'AIzaSyDLy4-E74lM7BHFgzC189ZhAuAGWl5jcl4'
 
-#require_relative '../step-definitions/helpers/transformations'
-
-#URL = 'http://maps.googleapis.com/maps/api/geocode/json?address=88+Colin+P+Kelly+Jr+St,+San+Francisco,+CA&sensor=false'
+# define url of geolocation service
 URL = 'https://maps.googleapis.com/maps/api/geocode/json?'

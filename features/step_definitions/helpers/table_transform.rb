@@ -9,16 +9,16 @@ def convertTableToHash(table, key, value)
 
     unless filterName == 'none'
       unless filterValue == 'none'
-        if result.has_key?(filterName)
-          tmp = result[filterName];
-          if (tmp.kind_of?(Array))
-            tmp.push(filterValue);
+        if result.key?(filterName)
+          tmp = result[filterName]
+          if tmp.is_a?(Array)
+            tmp.push(filterValue)
           else
-            tmp = [tmp, filterValue];
-            result[filterName] = tmp;
+            tmp = [tmp, filterValue]
+            result[filterName] = tmp
           end
         else
-          result[filterName] = filterValue;
+          result[filterName] = filterValue
         end
       end
     end
