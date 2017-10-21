@@ -1,4 +1,5 @@
 # cucumber.yml
 ##YAML Template
 
-parallel: foo
+#parallel: -f progress -f ParallelTests::Cucumber::FailuresLogger --out tmp_reports/cucumber_failures.log
+parallel: -f progress

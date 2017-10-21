@@ -17,7 +17,7 @@ Feature: Cover the happy path case
       | San Francisco                         | San Francisco, CA, USA                               | APPROXIMATE      |
       | 94107, San Francisco                  | San Francisco, CA 94107, USA                         | APPROXIMATE      |
       | 94107, California                     | San Francisco, CA 94107, USA                         | APPROXIMATE      |
-      | Co Road 82                            | County Rd 82 SE, Minnesota, USA                      | GEOMETRIC_CENTER |
+    #  | Co Road 82                            | County Rd 82 SE, Minnesota, USA                      | GEOMETRIC_CENTER |
       | State 82                              | FL-82, Fort Myers, FL, USA                           | GEOMETRIC_CENTER |
      # | U.S. 101                              | US-101, United States                                | GEOMETRIC_CENTER |
       | Interstate 280                        | I-280, California, USA                               | GEOMETRIC_CENTER |
