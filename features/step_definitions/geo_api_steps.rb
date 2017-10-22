@@ -9,7 +9,7 @@ CAPTURE_POSITION = Transform(/^(last|first|second|third|fourth|fifth|sixth|seven
 end
 
 When(/^I (successfully|unsuccessfully) browse to the url$/) do |status, table|
-  param_options = convertTableToHash(table, 'parameter', 'value')
+  param_options = convert_table_to_hash(table)
   # add key and language into parameters for request
   param_options.store('key', KEY_PASSED) unless param_options.key?('key')
   param_options.store('language', 'EN') unless param_options.key?('language')

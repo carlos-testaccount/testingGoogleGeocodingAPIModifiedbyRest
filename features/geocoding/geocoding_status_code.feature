@@ -1,6 +1,7 @@
 @status_code @ok
 Feature: Cover the happy path case
 
+  @debug
   Scenario Outline: check body code
     When I successfully browse to the url
       | parameter  | value             |
@@ -11,10 +12,11 @@ Feature: Cover the happy path case
 
     Examples:
       | address_value   | component_value                             | status_code  |
-      | 0000000         | empty                                       | ZERO_RESULTS |
+      | 0000000         | none                                        | ZERO_RESULTS |
       | 6 Los Mozarabes | administrative_area:Lyon\|postal_code:94107 | ZERO_RESULTS |
-      | empty           | administrative_area:Lyon\|postal_code:94107 | ZERO_RESULTS |
+      | none            | administrative_area:Lyon\|postal_code:94107 | ZERO_RESULTS |
 
+  @debug
   Scenario Outline: check body code
     When I unsuccessfully browse to the url
       | parameter         | value             |

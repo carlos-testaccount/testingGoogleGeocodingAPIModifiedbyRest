@@ -2,18 +2,12 @@
 
 AllCops:
   Exclude:
-  # Currently excluded for future investigation
-    - '**/hooks.rb'
-    - '**/env.rb'
-    - '**/http_util.rb'
-    - 'features/step_definitions/helpers/table_transform.rb'
+  - '**/env.rb'
 
 ################## Customized rules ##################
 
 Metrics/LineLength:
   Max: 150
-  Exclude:
-    - '**/long-text.rb'
 
 Metrics/AbcSize:
   Max: 30

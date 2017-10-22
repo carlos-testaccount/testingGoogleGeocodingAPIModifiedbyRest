@@ -2,15 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b0dd36be-2e3b-4982-8da7-44ba099a0dba" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/step_definitions/helpers/helper_geocoding.rb" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/features/step_definitions/helpers/helper_geo.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/features/step_definitions/helpers/table_transform.rb" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/runConfigurations/running_geo_api_tests.xml" afterPath="$PROJECT_DIR$/.idea/runConfigurations/running_geo_api_tests.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/testingGoogleGeocodingAPI.iml" afterPath="$PROJECT_DIR$/.idea/testingGoogleGeocodingAPI.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.rubocop.yml" afterPath="$PROJECT_DIR$/.rubocop.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Rakefile" afterPath="$PROJECT_DIR$/Rakefile" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/features/geocoding/geocoding_mandatory_params.feature" afterPath="$PROJECT_DIR$/features/geocoding/geocoding_mandatory_params.feature" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/features/geocoding/geocoding_status_code.feature" afterPath="$PROJECT_DIR$/features/geocoding/geocoding_status_code.feature" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/features/step_definitions/geo_api_steps.rb" afterPath="$PROJECT_DIR$/features/step_definitions/geo_api_steps.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/features/step_definitions/helpers/address_component.rb" afterPath="$PROJECT_DIR$/features/step_definitions/helpers/address_component.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/features/step_definitions/helpers/common.rb" afterPath="$PROJECT_DIR$/features/step_definitions/helpers/common.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/features/support/env.rb" afterPath="$PROJECT_DIR$/features/support/env.rb" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,7 +21,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/testingGoogleGeocodingAPI@running_geo_api_tests.coverage" NAME="running_geo_api_tests Coverage Results" MODIFIED="1508703641836" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="testingGoogleGeocodingAPI" />
+    <SUITE FILE_PATH="coverage/testingGoogleGeocodingAPI@running_geo_api_tests.coverage" NAME="running_geo_api_tests Coverage Results" MODIFIED="1508706054100" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="testingGoogleGeocodingAPI" />
     <SUITE FILE_PATH="coverage/testingGoogleGeocodingAPI@Rakefile.coverage" NAME="Rakefile Coverage Results" MODIFIED="1508687039627" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="testingGoogleGeocodingAPI" />
   </component>
   <component name="FavoritesManager">
@@ -28,11 +29,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="helper_geocoding.rb" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/features/step_definitions/helpers/helper_geocoding.rb">
+      <file leaf-file-name="env.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/features/support/env.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="18" column="3" lean-forward="true" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
+            <state relative-caret-position="85">
+              <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -41,8 +42,18 @@
       <file leaf-file-name="common.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/features/step_definitions/helpers/common.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+            <state relative-caret-position="85">
+              <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".rubocop.yml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.rubocop.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="21" lean-forward="true" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -75,12 +86,16 @@
       <find>addr_obj_from_result</find>
       <find>result_coord</find>
       <find>check_all_form_address</find>
+      <find>key</find>
+      <find>empty</find>
     </findStrings>
     <replaceStrings>
       <replace />
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/features</dir>
+      <dir>$PROJECT_DIR$/features/geocoding</dir>
+      <dir>$PROJECT_DIR$/features/reverse_geocoding</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -100,7 +115,6 @@
         <option value="$PROJECT_DIR$/features/step_definitions/helpers/helper-inv-geo.rb" />
         <option value="$PROJECT_DIR$/features/step_definitions/helpers/helper-geo.rb" />
         <option value="$PROJECT_DIR$/features/step_definitions/geo-api-steps.rb" />
-        <option value="$PROJECT_DIR$/.rubocop.yml" />
         <option value="$PROJECT_DIR$/features/aditional_parameters.feature" />
         <option value="$PROJECT_DIR$/features/mandatory_parameters.feature" />
         <option value="$PROJECT_DIR$/features/reverse.feature" />
@@ -109,18 +123,20 @@
         <option value="$PROJECT_DIR$/features/reverse_geocoding/reverse_geocoding_status_code.feature" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/config/cucumber.yaml" />
-        <option value="$PROJECT_DIR$/features/support/env.rb" />
         <option value="$PROJECT_DIR$/features/geocoding/geocoding_optional_params.feature" />
         <option value="$PROJECT_DIR$/features/reverse_geocoding/reverse_geocoding_mandatory_params.feature" />
-        <option value="$PROJECT_DIR$/features/geocoding/geocoding_components_params.feature" />
         <option value="$PROJECT_DIR$/features/step_definitions/helpers/address_component.rb" />
         <option value="$PROJECT_DIR$/features/step_definitions/helpers/helper_geo.rb" />
-        <option value="$PROJECT_DIR$/features/geocoding/geocoding_mandatory_params.feature" />
-        <option value="$PROJECT_DIR$/Rakefile" />
-        <option value="$PROJECT_DIR$/features/step_definitions/geo_api_steps.rb" />
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/features/step_definitions/helpers/table_transform.rb" />
+        <option value="$PROJECT_DIR$/Rakefile" />
+        <option value="$PROJECT_DIR$/features/geocoding/geocoding_components_params.feature" />
+        <option value="$PROJECT_DIR$/features/geocoding/geocoding_status_code.feature" />
+        <option value="$PROJECT_DIR$/features/geocoding/geocoding_mandatory_params.feature" />
+        <option value="$PROJECT_DIR$/features/step_definitions/geo_api_steps.rb" />
         <option value="$PROJECT_DIR$/features/step_definitions/helpers/common.rb" />
+        <option value="$PROJECT_DIR$/features/support/env.rb" />
+        <option value="$PROJECT_DIR$/.rubocop.yml" />
       </list>
     </option>
   </component>
@@ -181,7 +197,32 @@
               <item name="testingGoogleGeocodingAPI" type="b2602c69:ProjectViewProjectNode" />
               <item name="testingGoogleGeocodingAPI" type="462c0819:PsiDirectoryNode" />
               <item name="features" type="462c0819:PsiDirectoryNode" />
+              <item name="geocoding" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="testingGoogleGeocodingAPI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="testingGoogleGeocodingAPI" type="462c0819:PsiDirectoryNode" />
+              <item name="features" type="462c0819:PsiDirectoryNode" />
+              <item name="reverse_geocoding" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="testingGoogleGeocodingAPI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="testingGoogleGeocodingAPI" type="462c0819:PsiDirectoryNode" />
+              <item name="features" type="462c0819:PsiDirectoryNode" />
               <item name="step_definitions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="testingGoogleGeocodingAPI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="testingGoogleGeocodingAPI" type="462c0819:PsiDirectoryNode" />
+              <item name="features" type="462c0819:PsiDirectoryNode" />
+              <item name="step_definitions" type="462c0819:PsiDirectoryNode" />
+              <item name="helpers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="testingGoogleGeocodingAPI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="testingGoogleGeocodingAPI" type="462c0819:PsiDirectoryNode" />
+              <item name="features" type="462c0819:PsiDirectoryNode" />
+              <item name="support" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -194,7 +235,7 @@
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.ruby.settings.RubyActiveModuleSdkConfigurable" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="SearchEverywhereHistoryKey" value="rake&#9;FILE&#9;file:///Users/carlosalarcon/Documents/Projects/testingGoogleGeocodingAPI/Rakefile&#10;geo_api_steps.rb&#9;FILE&#9;file:///Users/carlosalarcon/Documents/Projects/testingGoogleGeocodingAPI/features/step_definitions/geo_api_steps.rb&#10;geocoding_mandatory_params.feature&#9;FILE&#9;file:///Users/carlosalarcon/Documents/Projects/testingGoogleGeocodingAPI/features/geocoding/geocoding_mandatory_params.feature&#10;env&#9;FILE&#9;file:///Users/carlosalarcon/Documents/Projects/testingGoogleGeocodingAPI/features/support/env.rb&#10;geocoding_mandatory_params.feature:22&#9;FILE&#9;file:///Users/carlosalarcon/Documents/Projects/testingGoogleGeocodingAPI/features/geocoding/geocoding_mandatory_params.feature&#10;gemfile&#9;FILE&#9;file:///Users/carlosalarcon/Documents/Projects/testingGoogleGeocodingAPI/Gemfile&#10;geocoding_mandatory_params.feature:20&#9;FILE&#9;file:///Users/carlosalarcon/Documents/Projects/testingGoogleGeocodingAPI/features/geocoding/geocoding_mandatory_params.feature&#10;RAke&#9;FILE&#9;file:///Users/carlosalarcon/Documents/Projects/testingGoogleGeocodingAPI/Rakefile&#10;rak&#9;FILE&#9;file:///Users/carlosalarcon/Documents/Projects/testingGoogleGeocodingAPI/Rakefile&#10;geo-api-steps.rb&#9;FILE&#9;file:///Users/carlosalarcon/Documents/Projects/testingGoogleGeocodingAPI/features/step_definitions/geo-api-steps.rb" />
+    <property name="SearchEverywhereHistoryKey" value="rake&#9;FILE&#9;file:///Users/carlosalarcon/Documents/Projects/testingGoogleGeocodingAPI/Rakefile&#10;geocoding_status_code.feature&#9;FILE&#9;file:///Users/carlosalarcon/Documents/Projects/testingGoogleGeocodingAPI/features/geocoding/geocoding_status_code.feature&#10;geo_api_steps.rb&#9;FILE&#9;file:///Users/carlosalarcon/Documents/Projects/testingGoogleGeocodingAPI/features/step_definitions/geo_api_steps.rb&#10;geocoding_mandatory_params.feature&#9;FILE&#9;file:///Users/carlosalarcon/Documents/Projects/testingGoogleGeocodingAPI/features/geocoding/geocoding_mandatory_params.feature&#10;env&#9;FILE&#9;file:///Users/carlosalarcon/Documents/Projects/testingGoogleGeocodingAPI/features/support/env.rb&#10;geocoding_mandatory_params.feature:22&#9;FILE&#9;file:///Users/carlosalarcon/Documents/Projects/testingGoogleGeocodingAPI/features/geocoding/geocoding_mandatory_params.feature&#10;gemfile&#9;FILE&#9;file:///Users/carlosalarcon/Documents/Projects/testingGoogleGeocodingAPI/Gemfile&#10;geocoding_mandatory_params.feature:20&#9;FILE&#9;file:///Users/carlosalarcon/Documents/Projects/testingGoogleGeocodingAPI/features/geocoding/geocoding_mandatory_params.feature&#10;RAke&#9;FILE&#9;file:///Users/carlosalarcon/Documents/Projects/testingGoogleGeocodingAPI/Rakefile&#10;rak&#9;FILE&#9;file:///Users/carlosalarcon/Documents/Projects/testingGoogleGeocodingAPI/Rakefile&#10;geo-api-steps.rb&#9;FILE&#9;file:///Users/carlosalarcon/Documents/Projects/testingGoogleGeocodingAPI/features/step_definitions/geo-api-steps.rb" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
@@ -301,12 +342,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="108638000" />
+    <option name="totallyTimeSpent" value="111034000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3111588" sideWeight="0.4916067" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3111588" sideWeight="0.4916067" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.49713877" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.49576783" sideWeight="0.4434907" order="8" side_tool="true" content_ui="tabs" />
@@ -368,8 +410,28 @@
           <line>33</line>
           <option name="timeStamp" value="78" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="ruby-line">
+          <url>file://$PROJECT_DIR$/features/step_definitions/helpers/common.rb</url>
+          <line>2</line>
+          <option name="timeStamp" value="79" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="ruby-line">
+          <url>file://$PROJECT_DIR$/features/step_definitions/geo_api_steps.rb</url>
+          <line>11</line>
+          <option name="timeStamp" value="80" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="ruby-line">
+          <url>file://$PROJECT_DIR$/features/step_definitions/helpers/common.rb</url>
+          <line>1</line>
+          <option name="timeStamp" value="81" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="ruby-line">
+          <url>file://$PROJECT_DIR$/features/step_definitions/helpers/common.rb</url>
+          <line>3</line>
+          <option name="timeStamp" value="85" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="79" />
+      <option name="time" value="86" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -632,14 +694,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.rubocop.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="19" lean-forward="true" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -652,30 +706,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/features/support/env.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="58" lean-forward="false" selection-start-line="5" selection-start-column="58" selection-end-line="5" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/features/geocoding/geocoding_status_code.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="47" lean-forward="false" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/features/reverse_geocoding/reverse_geocoding_status_code.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="32" lean-forward="false" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
           <folding />
         </state>
       </provider>
@@ -696,34 +726,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/features/geocoding/geocoding_components_params.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="18" column="21" lean-forward="false" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/features/geocoding/geocoding_mandatory_params.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/features/step_definitions/helpers/address_component.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="14" lean-forward="false" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Rakefile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="19" column="22" lean-forward="false" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
           <folding />
         </state>
       </provider>
@@ -736,22 +742,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/features/step_definitions/geo_api_steps.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-567">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/features/step_definitions/helpers/common.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/features/step_definitions/helpers/table_transform.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -760,10 +750,82 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/features/reverse_geocoding/reverse_geocoding_status_code.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="32" lean-forward="false" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/features/step_definitions/helpers/helper_geocoding.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="18" column="3" lean-forward="true" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
+        <state relative-caret-position="149">
+          <caret line="20" column="7" lean-forward="false" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/features/geocoding/geocoding_components_params.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/features/geocoding/geocoding_mandatory_params.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="45" column="59" lean-forward="false" selection-start-line="45" selection-start-column="59" selection-end-line="45" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Rakefile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="6" column="49" lean-forward="false" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/features/geocoding/geocoding_status_code.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="8" lean-forward="false" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/features/step_definitions/geo_api_steps.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="59" column="5" lean-forward="true" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/features/step_definitions/helpers/common.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/features/support/env.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.rubocop.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="21" lean-forward="true" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
           <folding />
         </state>
       </provider>

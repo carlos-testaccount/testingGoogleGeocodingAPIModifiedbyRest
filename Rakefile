@@ -10,8 +10,8 @@ Cucumber::Rake::Task.new('running_debug_tag_tests') do |t|
 end
 
 Cucumber::Rake::Task.new('running_all_tests') do |t|
-  FileUtils.rm_rf('reports')
-  Dir.mkdir('reports')
+  #FileUtils.rm_rf('reports')
+  #Dir.mkdir('reports')
   t.cucumber_opts = ["--tags", "~@pend", "--format", "html", "--out", "reports/report.html", "--format", "junit", "--out", "testoutput", "--format", "pretty"]
 end
 

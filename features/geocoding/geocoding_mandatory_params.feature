@@ -44,7 +44,6 @@ Feature: Cover the happy path case
     And I see first response contains an address_component
       | type                        | attribute  | value  |
       | administrative_area_level_2 | short_name | Huelva |
-    And I see first response contains 'GEOMETRIC_CENTER' geographic coordinates
 
     Examples:
       | address                             | formatted_address                        |
@@ -59,11 +58,10 @@ Feature: Cover the happy path case
       | components | administrative_area:Huelva\|country:Spain |
     Then I see response with status 'OK'
     And I see 1 result in the response
-    And I see first response formatted_address 'Huelva, Spain'
+    And I see first response formatted_address 'Calle Puerto, Huelva, Spain'
     And I see first response contains an address_component
       | type                        | attribute  | value  |
       | administrative_area_level_2 | short_name | Huelva |
-    And I see first response contains 'APPROXIMATE' geographic coordinates
 
   Scenario: region additional parameters
     When I successfully browse to the url
