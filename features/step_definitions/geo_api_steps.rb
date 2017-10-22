@@ -1,5 +1,4 @@
 require 'httparty'
-require 'jsonpath'
 
 def pos_to_int(pos)
   %w[last first second third fourth fifth sixth seventh eigth ninth tenth].index(pos) - 1
@@ -8,7 +7,6 @@ end
 CAPTURE_POSITION = Transform(/^(last|first|second|third|fourth|fifth|sixth|seventh|eigth|ninth|tenth)$/) do |v|
   pos_to_int(v)
 end
-
 
 When(/^I (successfully|unsuccessfully) browse to the url$/) do |status, table|
   param_options = convertTableToHash(table, 'parameter', 'value')
@@ -49,38 +47,37 @@ Then(/^I (see|don't see) (#{CAPTURE_POSITION}) response contains(?: '(\w+)')? ge
     expect(geo_coord(pos).key?(:lng)).to be true
     expect(geo_coord_type(pos)).to eq(location_type)
   else
-    expect(result_coord(pos).nil?).to be true
-    expect(result_coord(pos).nil?).to be true
+    expect(result(pos).nil?).to be true
+    expect(result(pos).nil?).to be true
   end
 end
 
 Then(/^I (see|don't see) (#{CAPTURE_POSITION}) response formatted_address '(.*)'$/) do |option, pos, value|
   if option == 'see'
-    expect(formateed_address(pos)).to eq(value)
+    expect(formatted_address(pos)).to eq(value)
   else
     pending
   end
 end
 
 Then(/^I see '(.*)' response(?:s)? contains a formatted_address '(.*)'$/) do |location_type, value|
-  all_formateed_address = check_all_responses_form_addr(location_type)
-  expect(all_formateed_address).to include(value)
+  expect(all_form_address(location_type).uniq).to include(value)
 end
 
 Then(/^I see (.*) result in the response$/) do |num_result|
-  expect(num_results).to eq(num_result.to_i)
+  expect(all_results.count).to eq(num_result.to_i)
 end
 
 Then(/^I see all results are result_type '(.*)'$/) do |result|
-  expect(check_all_result_types.uniq.count).to eq(1)
-  expect(check_type(check_all_result_types.uniq[0], result)).to be true
+  expect(all_result_types.uniq.count).to eq(1)
+  expect(check_type(all_result_types.uniq[0], result)).to be true
 end
 
 Then(/^I see all results are location_type '(.*)'$/) do |result|
-  expect(check_all_location_types.uniq.count).to eq(1)
-  expect(check_all_location_types.uniq[0]).to eq result
+  expect(all_location_types.uniq.count).to eq(1)
+  expect(all_location_types.uniq[0]).to eq result
 end
 
 Then(/^I see (#{CAPTURE_POSITION}) results is partial_match$/) do |pos|
-  expect(check_parcial_match[pos]).to be true
+  expect(all_parcial_match[pos]).to be true
 end

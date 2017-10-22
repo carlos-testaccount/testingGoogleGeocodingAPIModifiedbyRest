@@ -4,13 +4,15 @@ require 'report_builder'
 
 processes = ENV['processes'] || 10
 
-Cucumber::Rake::Task.new('running_geo_api_tests') do |t|
-  #t.cucumber_opts = ["--tags", "@carlos", "--tags", "~@pend", "--format", "report/report.html", "--out", "report.html", "--format", "junit", "--out", "testoutput", "--format", "pretty", "--format", "rerun", "--out", "rerun.txt"]
-  t.cucumber_opts = ["--tags", "@carlos"]
+Cucumber::Rake::Task.new('running_debug_tag_tests') do |t|
+  #t.cucumber_opts = ["--tags", "@debug", "--tags", "~@pend", "--format", "report/report.html", "--out", "report.html", "--format", "junit", "--out", "testoutput", "--format", "pretty", "--format", "rerun", "--out", "rerun.txt"]
+  t.cucumber_opts = ["--tags", "@debug"]
 end
 
 Cucumber::Rake::Task.new('running_all_tests') do |t|
-  t.cucumber_opts = ["--tags", "~@pend", "--format", "html", "--out", "report.html", "--format", "junit", "--out", "testoutput", "--format", "pretty"]
+  FileUtils.rm_rf('reports')
+  Dir.mkdir('reports')
+  t.cucumber_opts = ["--tags", "~@pend", "--format", "html", "--out", "reports/report.html", "--format", "junit", "--out", "testoutput", "--format", "pretty"]
 end
 
 task 'prepare_parallel_report' do

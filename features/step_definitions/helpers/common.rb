@@ -26,3 +26,15 @@ def convertTableToHash(table, key, value)
 
   returnValue
 end
+
+def check_type(type, value)
+  type.any? { |e| e.include? value }
+end
+
+def check_in_all_results(atr)
+  all_results.map { |resp| resp[atr] }
+end
+
+def response_atr(atr)
+  @response_body[atr]
+end

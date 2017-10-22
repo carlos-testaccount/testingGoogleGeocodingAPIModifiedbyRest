@@ -64,7 +64,7 @@ Feature: Cover the happy path case
       | type                        | attribute  | value  |
       | administrative_area_level_2 | short_name | Huelva |
     And I see first response contains 'APPROXIMATE' geographic coordinates
-    
+
   Scenario: region additional parameters
     When I successfully browse to the url
       | parameter  | value                                     |

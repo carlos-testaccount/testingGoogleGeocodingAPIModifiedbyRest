@@ -8,3 +8,7 @@ class AddressComponent
     @long_name, @short_name, @types = hash.values_at(:long_name, :short_name, :types)
   end
 end
+
+def addr_obj_from_result(result)
+  result[:address_components].map { |h| AddressComponent.new(h) }
+end
