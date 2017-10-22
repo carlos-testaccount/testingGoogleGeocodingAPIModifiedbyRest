@@ -1,4 +1,4 @@
-# Tengo q poner algo
+# Need a comment
 class AddressComponent
   attr_accessor :long_name
   attr_accessor :short_name

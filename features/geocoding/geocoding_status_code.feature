@@ -1,8 +1,7 @@
-@status_code @ok
-Feature: Cover the happy path case
+@status_code @geocoding
+Feature: Cover the geocoding status depending on the request parameters
 
-  @debug
-  Scenario Outline: check body code
+  Scenario Outline: Check geocoding response with zero results
     When I successfully browse to the url
       | parameter  | value             |
       | address    | <address_value>   |
@@ -16,8 +15,7 @@ Feature: Cover the happy path case
       | 6 Los Mozarabes | administrative_area:Lyon\|postal_code:94107 | ZERO_RESULTS |
       | none            | administrative_area:Lyon\|postal_code:94107 | ZERO_RESULTS |
 
-  @debug
-  Scenario Outline: check body code
+  Scenario Outline: Check geocoding response with an invalid request
     When I unsuccessfully browse to the url
       | parameter         | value             |
       | <address_name>    | <address_value>   |
@@ -32,7 +30,7 @@ Feature: Cover the happy path case
       | addres       | none          | none            | none            | INVALID_REQUEST |
       | none         | none          | none            | none            | INVALID_REQUEST |
 
-  Scenario: check body code
+  Scenario: Check geocoding response with a request denied
     When I successfully browse to the url
       | parameter | value           |
       | address   | 6 Los Mozarabes |

@@ -1,7 +1,7 @@
-@ok
-Feature: Cover the happy path case
+@address @geocoding
+Feature: Cover the geocoding when address is used as parameter
 
-  Scenario Outline: valid Address
+  Scenario Outline: Check geocoding response with a valid address
     When I successfully browse to the url
       | parameter | value           |
       | address   | <address_value> |
@@ -23,7 +23,7 @@ Feature: Cover the happy path case
       | Spain A42                             | A-42, Spain                                          | GEOMETRIC_CENTER | 1           |
       | Interstate 280                        | I-280, California, USA                               | GEOMETRIC_CENTER | 1           |
 
-  Scenario: several responses
+  Scenario: Check geocoding response with valid address and component
     When I successfully browse to the url
       | parameter  | value         |
       | address    | Calle Real    |
@@ -33,24 +33,7 @@ Feature: Cover the happy path case
       | type    | attribute  | value |
       | country | short_name | ES    |
 
-  Scenario Outline: several address
-    When I successfully browse to the url
-      | parameter  | value                                     |
-      | address    | <address>                                 |
-      | components | administrative_area:Huelva\|country:Spain |
-    Then I see response with status 'OK'
-    And I see 1 result in the response
-    And I see first response formatted_address '<formatted_address>'
-    And I see first response contains an address_component
-      | type                        | attribute  | value  |
-      | administrative_area_level_2 | short_name | Huelva |
-
-    Examples:
-      | address                             | formatted_address                        |
-      | calle 6 Mozarabes \| calle puerto   | Calle Puerto, Huelva, Spain              |
-      | calle puerto \| calle los mozarabes | Calle los Mozárabes, 21002 Huelva, Spain |
-
-  Scenario: several address
+  Scenario: Check geocoding response with multi address
     When I successfully browse to the url
       | parameter  | value                                     |
       | address    | calle 6 Mozarabes                         |
@@ -63,7 +46,7 @@ Feature: Cover the happy path case
       | type                        | attribute  | value  |
       | administrative_area_level_2 | short_name | Huelva |
 
-  Scenario: region additional parameters
+  Scenario: Check geocoding response with a address and region additional parameters
     When I successfully browse to the url
       | parameter  | value                                     |
       | address    | 1025 Los Mozarabes                        |

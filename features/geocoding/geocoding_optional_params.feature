@@ -1,6 +1,7 @@
-Feature: Check aditional params
+@opt_params @geocoding
+Feature: Cover the geocoding with optional parameters
 
-  Scenario: bounds additional parameters
+  Scenario: Check geocoding response with parameter bounds
     When I successfully browse to the url
       | parameter | value                                       |
       | address   | Los Mozarabes                               |
@@ -11,7 +12,7 @@ Feature: Check aditional params
       | type    | attribute  | value |
       | country | short_name | ES    |
 
-  Scenario Outline: language additional parameters
+  Scenario Outline: Check geocoding response with parameter language
     When I successfully browse to the url
       | parameter | value      |
       | address   | London     |
@@ -28,7 +29,7 @@ Feature: Check aditional params
       | PT       | Londres, Reino Unido |
       | FR       | Londres, Royaume-Uni |
 
-  Scenario: region additional parameters
+  Scenario: Check geocoding response with parameter region
     When I successfully browse to the url
       | parameter | value  |
       | address   | Huelva |

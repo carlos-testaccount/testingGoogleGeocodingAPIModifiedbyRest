@@ -1,7 +1,7 @@
-@ok
-Feature: reverse geolocation
+@status_code @reverse_geocoding
+Feature: Cover the reverse geocoding status depending on the request parameters
 
-  Scenario Outline: TBD invalid latlng
+  Scenario Outline: Check reverse geocoding response with an invalid latlng
     When I unsuccessfully browse to the url
       | parameter | value       |
       | latlng    | <lat>,<lng> |
@@ -18,7 +18,7 @@ Feature: reverse geolocation
       | 37.78226710000001  | AAB            |
       | N37.78226710000001 | -122.3912479N  |
 
-  Scenario Outline: TBD invalid place_id
+  Scenario Outline: Check reverse geocoding response with an invalid place_id
     When I unsuccessfully browse to the url
       | parameter | value      |
       | place_id  | <place_id> |
