@@ -1,55 +1,45 @@
-# encoding: utf-8
-
-#require 'rubygems'
 require 'cucumber'
 require 'cucumber/rake/task'
-
-require 'cukeforker'
-require 'cukeforker/rake_task'
-require 'jsonpath'
-
-#require 'cuke_sniffer'
-
 require 'report_builder'
 
-task "move_to_test_directory" do
-  Dir.chdir('features')
-end
+processes = ENV['processes'] || 10
 
-Cucumber::Rake::Task.new("running_geo_api_tests") do |t|
-  # t.cucumber_opts = ["--tags", "@carlos", "--tags", "~@pend", "--format", "html", "--out", "report.html", "--format", "junit", "--out", "testoutput", "--format", "pretty", "--format", "rerun", "--out", "rerun.txt"]
+Cucumber::Rake::Task.new('running_geo_api_tests') do |t|
+  #t.cucumber_opts = ["--tags", "@carlos", "--tags", "~@pend", "--format", "report/report.html", "--out", "report.html", "--format", "junit", "--out", "testoutput", "--format", "pretty", "--format", "rerun", "--out", "rerun.txt"]
   t.cucumber_opts = ["--tags", "@carlos"]
 end
 
-# Cucumber::Rake::Task.new("running_parallel_geo_api_tests") do
-#   CukeForker::Runner.run CukeForker::Scenarios.all
-#   #extra_args: %W[-f CukeForker::Formatters::JunitScenarioFormatter --out results/junit]
-# end
+Cucumber::Rake::Task.new('running_all_tests') do |t|
+  t.cucumber_opts = ["--tags", "~@pend", "--format", "html", "--out", "report.html", "--format", "junit", "--out", "testoutput", "--format", "pretty"]
+end
 
-task :cleanup_cuke_forker do
-  puts " ========Deleting old reports and logs========="
-  #FileUtils.rm_rf('reports/test_report')
-  Dir.mkdir("features/reports/test_report")
+task 'prepare_parallel_report' do
+  FileUtils.rm_rf('reports')
+  Dir.mkdir('reports')
+
+  puts "configure reportbuilder"
   ReportBuilder.configure do |config|
-    config.json_path = 'reports/test_report'
-    config.report_path = 'reports/test_report'
-    config.report_tabs = [:overview, :features, :scenarios, :errors]
+    config.json_path    = 'tmp_reports'
+    config.report_path  = 'reports/reports'
+    config.report_types = [:json, :html]
+    config.report_tabs  = [:overview, :features, :scenarios, :errors]
     config.report_title = 'Test Results'
     config.report
   end
 end
 
-task :all do
-  Rake::Task['cleanup_cuke_forker'].invoke
-  puts "===== Executing Tests in parallel"
-
-  Dir.chdir('features/')
-
-  CukeForker::Runner.run CukeForker::Scenarios.tagged('@carlos'), {:max => 10,
-                                                     :log => true, :format => :json, :out => 'reports/test_report'}
-  puts "===== End Executing Tests in parallel"
-  puts "===== Executing report"
+task 'create_report' do
   ReportBuilder.build_report
-  puts "===== End Executing report"
+  FileUtils.rm_rf('tmp_reports')
+end
 
+task 'parallel_all_tests' do
+  Rake.application.invoke_task('prepare_parallel_report')
+
+  FileUtils.rm_rf('tmp_reports')
+  Dir.mkdir('tmp_reports')
+
+  system "bundle exec parallel_cucumber  -n #{processes} features/ -o \'-p parallel -f json -o tmp_reports/feature$TEST_ENV_NUMBER.json \'"
+  #system "bundle exec parallel_cucumber features/ -o \"-r features -p parallel \" -n #{processes} " or exit!($?.exitstatus)
+  Rake.application.invoke_task('create_report')
 end

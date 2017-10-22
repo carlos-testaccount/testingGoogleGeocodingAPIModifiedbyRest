@@ -5,12 +5,6 @@ gem 'httparty'
 gem 'rspec', '>=3.4'
 gem 'rspec-expectations', '=3.4.0'
 gem 'rake', '10.4.0'
-gem 'cukeforker', '=1.1.0'
-gem 'faraday'
-#gem 'typhoeus'
-
-
+gem 'parallel_tests'
 gem 'jsonpath'
-
-gem 'report_builder','=0.1.4'
-#gem 'cuke_sniffer', '=0.0.8'
+gem 'report_builder', '=0.1.4'

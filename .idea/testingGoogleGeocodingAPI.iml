@@ -122,16 +122,6 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
-      <library name="faraday (vbundled(0.13.1)) [path][gem]">
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/=.vendor/ruby/2.0.0/gems/faraday-0.13.1/lib" />
-        </CLASSES>
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/=.vendor/ruby/2.0.0/gems/faraday-0.13.1/lib" />
-        </SOURCES>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
       <library name="ffi (vbundled(1.9.18)) [path][gem]">
         <CLASSES>
           <root url="file://$MODULE_DIR$/=.vendor/ruby/2.0.0/gems/ffi-1.9.18/ext" />
@@ -248,12 +238,24 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
-      <library name="multipart-post (vbundled(2.0.0)) [path][gem]">
+      <library name="parallel (vbundled(1.12.0)) [path][gem]">
         <CLASSES>
-          <root url="file://$MODULE_DIR$/=.vendor/ruby/2.0.0/gems/multipart-post-2.0.0/lib" />
+          <root url="file://$MODULE_DIR$/=.vendor/ruby/2.0.0/gems/parallel-1.12.0/lib" />
         </CLASSES>
         <SOURCES>
-          <root url="file://$MODULE_DIR$/=.vendor/ruby/2.0.0/gems/multipart-post-2.0.0/lib" />
+          <root url="file://$MODULE_DIR$/=.vendor/ruby/2.0.0/gems/parallel-1.12.0/lib" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="parallel_tests (vbundled(2.17.0)) [path][gem]">
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/=.vendor/ruby/2.0.0/gems/parallel_tests-2.17.0/bin" />
+          <root url="file://$MODULE_DIR$/=.vendor/ruby/2.0.0/gems/parallel_tests-2.17.0/lib" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/=.vendor/ruby/2.0.0/gems/parallel_tests-2.17.0/bin" />
+          <root url="file://$MODULE_DIR$/=.vendor/ruby/2.0.0/gems/parallel_tests-2.17.0/lib" />
         </SOURCES>
       </library>
     </orderEntry>

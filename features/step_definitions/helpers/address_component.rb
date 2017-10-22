@@ -1,4 +1,5 @@
-class Address_component
+# Tengo q poner algo
+class AddressComponent
   attr_accessor :long_name
   attr_accessor :short_name
   attr_accessor :types
@@ -6,5 +7,4 @@ class Address_component
   def initialize(hash)
     @long_name, @short_name, @types = hash.values_at(:long_name, :short_name, :types)
   end
-
 end

@@ -5,3 +5,6 @@ Gemfile.lock
 .ruby-version
 =.vendor/*
 .idea/
+tmp_reports/*
+reports/*
+report.html
