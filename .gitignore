@@ -7,3 +7,4 @@ Gemfile.lock
 .idea/
 tmp_reports/*
 reports/*
+report.html

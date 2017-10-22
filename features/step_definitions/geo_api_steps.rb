@@ -9,6 +9,7 @@ CAPTURE_POSITION = Transform(/^(last|first|second|third|fourth|fifth|sixth|seven
   pos_to_int(v)
 end
 
+
 When(/^I (successfully|unsuccessfully) browse to the url$/) do |status, table|
   param_options = convertTableToHash(table, 'parameter', 'value')
   # add key into parameters for request
@@ -63,4 +64,8 @@ end
 Then(/^I see '(.*)' response(?:s)? contains a formatted_address '(.*)'$/) do |location_type, value|
   all_formateed_address = check_all_responses_form_addr(location_type)
   expect(all_formateed_address).to include(value)
+end
+
+Then(/^I see (.*) result in the response$/) do |num_result|
+  expect(num_results).to eq(num_result.to_i)
 end

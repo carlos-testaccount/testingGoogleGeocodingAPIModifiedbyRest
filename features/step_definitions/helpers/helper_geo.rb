@@ -26,6 +26,10 @@ def results_json
   @response_body[:results]
 end
 
+def num_results
+  results_json.count
+end
+
 def all_obj_from_json
   results_json.map { |result| addr_obj_from_result(result) }
 end
