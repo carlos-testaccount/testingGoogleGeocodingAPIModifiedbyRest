@@ -66,7 +66,8 @@ def geo_coord(pos)
 end
 
 def geo_coord_type(pos)
-  @response_body[:results][pos][:geometry][:location_type]
+  check_all_location_types[pos]
+  #@response_body[:results][pos][:geometry][:location_type]
 end
 
 def result_coord(pos = 0)
@@ -79,4 +80,16 @@ end
 
 def check_all_responses_form_addr(location_type)
   @response_body[:results].map { |resp| resp[:formatted_address] if resp[:geometry][:location_type] == location_type }.compact
+end
+
+def check_all_result_types
+  @response_body[:results].map { |resp| resp[:types] }
+end
+
+def check_all_location_types
+  @response_body[:results].map { |resp| resp[:geometry][:location_type] }
+end
+
+def check_parcial_match
+  @response_body[:results].map { |resp| resp[:partial_match] }
 end

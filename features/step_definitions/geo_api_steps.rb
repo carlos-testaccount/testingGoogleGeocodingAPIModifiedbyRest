@@ -12,8 +12,9 @@ end
 
 When(/^I (successfully|unsuccessfully) browse to the url$/) do |status, table|
   param_options = convertTableToHash(table, 'parameter', 'value')
-  # add key into parameters for request
+  # add key and language into parameters for request
   param_options.store('key', KEY_PASSED) unless param_options.key?('key')
+  param_options.store('language', 'EN') unless param_options.key?('language')
   response       = HTTParty.get(URL, query: param_options)
   response_code  = response.code
   @response_body = symb_body_resp(response)
@@ -68,4 +69,18 @@ end
 
 Then(/^I see (.*) result in the response$/) do |num_result|
   expect(num_results).to eq(num_result.to_i)
+end
+
+Then(/^I see all results are result_type '(.*)'$/) do |result|
+  expect(check_all_result_types.uniq.count).to eq(1)
+  expect(check_type(check_all_result_types.uniq[0], result)).to be true
+end
+
+Then(/^I see all results are location_type '(.*)'$/) do |result|
+  expect(check_all_location_types.uniq.count).to eq(1)
+  expect(check_all_location_types.uniq[0]).to eq result
+end
+
+Then(/^I see (#{CAPTURE_POSITION}) results is partial_match$/) do |pos|
+  expect(check_parcial_match[pos]).to be true
 end
