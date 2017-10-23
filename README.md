@@ -15,8 +15,8 @@ See more information about the service [here](https://developers.google.com/maps
 
 ### Test coverage
 - Geocoding
-  - Test mandatory parameters as address or components
-  -  Test optional parametes
+  - Test mandatory parameter as address or components
+  -  Test optional parameters
   - Test invalid parameters
 
 - Reverse geocoding
@@ -40,7 +40,7 @@ In root folder, install all gems
 
 Find more information about the Google API key [here](https://developers.google.com/maps/documentation/geocoding/start#get-a-key)
 
-- **parallel**: num of threads for the parallel execution. If it's not defined, the default value is 10.
+- **parallel**: number of threads for the parallel execution. If it's not defined, the default value is 10.
 
 ##### Execute all tests without parallel execution
 ```bash
