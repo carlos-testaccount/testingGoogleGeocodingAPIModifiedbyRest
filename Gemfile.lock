@@ -2,8 +2,6 @@ GEM
   remote: https://rubygems.org/
   specs:
     builder (3.2.3)
-    childprocess (0.8.0)
-      ffi (~> 1.0, >= 1.0.11)
     cucumber (2.4.0)
       builder (>= 2.1.2)
       cucumber-core (~> 1.5.0)
@@ -15,17 +13,11 @@ GEM
     cucumber-core (1.5.0)
       gherkin (~> 4.0)
     cucumber-wire (0.0.1)
-    cukeforker (1.1.0)
-      cucumber (>= 2.0.0)
-      vnctools (>= 0.0.5)
     diff-lcs (1.3)
-    ffi (1.9.18)
     gherkin (4.1.3)
     httparty (0.15.6)
       multi_xml (>= 0.5.2)
     json (2.1.0)
-    jsonpath (0.8.8)
-      multi_json
     multi_json (1.12.2)
     multi_test (0.1.2)
     multi_xml (0.6.0)
@@ -49,17 +41,13 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.4.0)
     rspec-support (3.4.1)
-    vnctools (0.1.1)
-      childprocess
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   cucumber (= 2.4.0)
-  cukeforker (= 1.1.0)
   httparty
-  jsonpath
   parallel_tests
   rake (= 10.4.0)
   report_builder (= 0.1.4)
