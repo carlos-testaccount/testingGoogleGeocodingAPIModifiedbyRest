@@ -27,7 +27,8 @@ See more information about the service [here](https://developers.google.com/maps
 
 Bundler gem needs to be previously installed. More info [here](https://github.com/bundler/bundler)
 
-In root folder, install all gems
+Install all gems in the root folder
+
 
 ```sh
   bundle install
@@ -36,7 +37,7 @@ In root folder, install all gems
 ### How to use it
 
 ##### Parameters
-- **key**: Google API key. It is possible to define a default key in the `env.rb` file, and not pass it as a parameter. 
+- **key**: Google API key. In order to avoid this parameter, define a default value in `env.rb file`
 
 Find more information about the Google API key [here](https://developers.google.com/maps/documentation/geocoding/start#get-a-key)
 
