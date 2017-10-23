@@ -37,7 +37,7 @@ Install all gems in the root folder
 ### How to use it
 
 ##### Parameters
-- **key**: Google API key. In order to avoid this parameter, define a default value in `env.rb file`
+- **key**: Google API key. In order to avoid this parameter, define it as a default value in `env.rb file`
 
 Find more information about the Google API key [here](https://developers.google.com/maps/documentation/geocoding/start#get-a-key)
 
