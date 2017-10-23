@@ -18,7 +18,7 @@ def resp_error_message
   response_atr(:error_message)
 end
 
-# check if all objets in a response contains an atr:value
+# check if all objets in a result contains an atr:value
 def check_in_result(result, type, atr, value)
   addr_obj_from_result(result).map { |adr| return (adr.send atr).casecmp(value).zero? if adr.types.include? type }.include? true
 end
@@ -51,8 +51,6 @@ end
 def location_type(result)
   result[:geometry][:location_type]
 end
-
-##### All ####
 
 def all_results
   response_atr(:results)

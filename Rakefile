@@ -2,17 +2,18 @@ require 'cucumber'
 require 'cucumber/rake/task'
 require 'report_builder'
 
-processes = ENV['processes'] || 10
+# define de process in parallel
+parallel_pro = ENV['parallel'] || 10
 
 Cucumber::Rake::Task.new('running_debug_tag_tests') do |t|
   #t.cucumber_opts = ["--tags", "@debug", "--tags", "~@pend", "--format", "report/report.html", "--out", "report.html", "--format", "junit", "--out", "testoutput", "--format", "pretty", "--format", "rerun", "--out", "rerun.txt"]
   t.cucumber_opts = ["--tags", "@debug"]
 end
 
-Cucumber::Rake::Task.new('running_all_tests') do |t|
-  #FileUtils.rm_rf('reports')
-  #Dir.mkdir('reports')
-  t.cucumber_opts = ["--tags", "~@pend", "--format", "html", "--out", "reports/report.html", "--format", "junit", "--out", "testoutput", "--format", "pretty"]
+Cucumber::Rake::Task.new('all_tests') do |t|
+  FileUtils.rm_rf('reports')
+  Dir.mkdir('reports')
+  t.cucumber_opts = ["--tags", "~@pend", "--format", "html", "--out", "reports/report_without_parallel.html", "--format", "junit", "--out", "testoutput", "--format", "pretty"]
 end
 
 task 'prepare_parallel_report' do
@@ -41,7 +42,6 @@ task 'parallel_all_tests' do
   FileUtils.rm_rf('tmp_reports')
   Dir.mkdir('tmp_reports')
 
-  system "bundle exec parallel_cucumber  -n #{processes} features/ -o \'-p parallel -f json -o tmp_reports/feature$TEST_ENV_NUMBER.json \'"
-  #system "bundle exec parallel_cucumber features/ -o \"-r features -p parallel \" -n #{processes} " or exit!($?.exitstatus)
+  system "bundle exec parallel_cucumber  -n #{parallel_pro} features/ -o \'-p parallel -f json -o tmp_reports/feature$TEST_ENV_NUMBER.json \'"
   Rake.application.invoke_task('create_report')
 end

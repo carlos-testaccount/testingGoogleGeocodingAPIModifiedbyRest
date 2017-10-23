@@ -1,5 +1,5 @@
 # geocoding key passed as a parameter or use a default one
-KEY_PASSED = ENV['key'] || 'AIzaSyDLy4-E74lM7BHFgzC189ZhAuAGWl5jcl4'
+KEY_PASSED = ENV['key'] || 'Default_key'
 
-# define url of geocoding service
+# define url of Google Geocoding API service
 URL = 'https://maps.googleapis.com/maps/api/geocode/json?'

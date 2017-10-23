@@ -1,4 +1,5 @@
-# Need a comment
+# This class store all addresses modules  available in the response of the API
+# It contains the three attributes: long_name, short_name and type
 class AddressComponent
   attr_accessor :long_name
   attr_accessor :short_name
