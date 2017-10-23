@@ -25,7 +25,7 @@ See more information about the service [here](https://developers.google.com/maps
 
 ### Installation
 
-It's necessary to have installed the `bundler` gem. info [here](https://github.com/bundler/bundler)
+Bundler gem needs to be previously installed. More info [here](https://github.com/bundler/bundler)
 
 In root folder, install all gems
 
