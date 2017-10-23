@@ -35,12 +35,12 @@ In root folder, install all gems
 
 ### How to use it
 
-##### parameters
+##### Parameters
 - **key**: Google API key. It is possible to define a default key in the `env.rb` file, and not pass it as a parameter. 
 
 Find more information about the Google API key [here](https://developers.google.com/maps/documentation/geocoding/start#get-a-key)
 
-- **parallel**: num of threads for the parallel execution. If it's not defined, the default value is 10
+- **parallel**: num of threads for the parallel execution. If it's not defined, the default value is 10.
 
 ##### Execute all tests without parallel execution
 ```bash
