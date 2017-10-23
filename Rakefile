@@ -6,7 +6,6 @@ require 'report_builder'
 parallel_pro = ENV['parallel'] || 10
 
 Cucumber::Rake::Task.new('running_debug_tag_tests') do |t|
-  #t.cucumber_opts = ["--tags", "@debug", "--tags", "~@pend", "--format", "report/report.html", "--out", "report.html", "--format", "junit", "--out", "testoutput", "--format", "pretty", "--format", "rerun", "--out", "rerun.txt"]
   t.cucumber_opts = ["--tags", "@debug"]
 end
 
